@@ -1,0 +1,37 @@
+
+body { color: #303030; background: #fff; font: .74em Arial, Verdana, sans-serif; text-align: left; line-height: 1.6em; margin: 2.5em 0; }
+a { color: #214466; background: inherit; }
+a:hover { color: #000; background: inherit; }
+h2 {font-size: 1.4em;}
+ul { margin: .6em 0; padding: 0;}
+.clear {clear: both; margin: 0 0 .5em 0; }
+
+#pct_main { width: 980px; margin: 0 auto; text-align: left;}
+
+#pct_header { width: 100%;}
+#header_top {
+    display:block;
+    width:100%;
+    float:left;
+    border-bottom: 1px solid #DCDBD5;
+}
+#header_top_left {
+    float: left;
+    display:block;
+    width:45%;
+    vertical-align:top;
+}
+#header_top_right {
+    float: right;
+    display:block;
+    width:55%;
+
+}
+#account_info {
+    width: 100%;
+    text-align: right;
+    display:block;
+}
+#account_info p { padding: 3px 15px; margin: 0 3px 0 0; text-decoration: none; color: #808080; background: inherit; }
+#pct_content { display:block; width: 100%; float: right;}
+#pct_footer { width: 100%;}
