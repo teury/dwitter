@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>
+    {% if user.is_authenticated %}
+        {% include "form.html" %}
+    {% endif %}
+    </p>
+    {% if dweetList.count %}
+        {% for dweet in dweetList %}
+            <p> {{ dweet }} - {{ dweet.date_created|date:"D d M Y" }} by {{ dweet.user}}
+        {% endfor %}
+    {% else %}
+        <p>There are no dweets :( sorry</p>
+    {% endif %}
+
+
+{% endblock %}

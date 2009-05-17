@@ -1,11 +1,17 @@
 # Django settings for ditter project.
 
+#dont forget to change these for production use
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
+
+#ref: http://rob.cogit8.org/blog/2009/May/05/django-and-relativity-updated/
+import os #you may improve this because all os package will be loaded
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 
 MANAGERS = ADMINS
 
@@ -70,17 +76,22 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/opt/java/workspace/projects/dwitter/template'
+    #'/opt/python/workspace/projects/dwitter/template' <-- you can use this way, too
+    os.path.join(PROJECT_PATH, 'template')
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
+    'django.contrib.admin',
+    'dweet'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
-    'django.core.context_processors.i18n',
+    #'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
 )
