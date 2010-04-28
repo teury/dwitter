@@ -6,15 +6,11 @@ from dweet.forms import DweetForm
 
 def dashboard(request):
     ctx = {}
-
-    ctx['dweetList'] = Dweety.objects.all()[:20]
+    ctx['dweetList'] = Dweety.objects.all() #[:20]
     ctx['dweetForm'] = DweetForm()
 
     ctx = RequestContext(request,ctx)
     t = loader.get_template('dashboard.html')
-
-
-
 
     return HttpResponse(t.render(ctx))
 
@@ -27,3 +23,12 @@ def dweetForm(request):
              dweety.save()
 
     return HttpResponseRedirect('/')
+
+
+def deleteDweet(request, dweet_id):
+    dweet = Dweety.objects.get(id=dweet_id)
+    if dweet.user == request.user:
+        dweet.delete()
+
+    return HttpResponseRedirect('/')
+

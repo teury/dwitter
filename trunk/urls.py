@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     (r'^registration/login/$', 'django.contrib.auth.views.login',  {'template_name': 'registration/login.html'}),
     (r'^registration/logout/$', 'django.contrib.auth.views.logout',  {'template_name': 'registration/logout.html'}),
 
-    (r'^dweet/form/$', 'views.dweetForm'), 
+    (r'^dweet/form/$', 'views.dweetForm'),
+    (r'^dweet/(?P<dweet_id>\d+)/delete/$', 'views.deleteDweet'),
 )
