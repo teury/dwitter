@@ -1,0 +1,1 @@
+This is an educational purpose simple django twitter clone
